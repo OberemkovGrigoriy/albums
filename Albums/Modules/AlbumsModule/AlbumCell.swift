@@ -13,10 +13,8 @@ final class AlbumCell: UITableViewCell {
     
     private let cardView: UIView = {
         let view = UIView()
-            //view.layer.borderWidth = 0.5
         view.backgroundColor = .white
         view.layer.cornerRadius = 12
-       // view.layer.shadowColor =
         
         view.layer.shadowColor = UIColor.darkGray.cgColor
         view.layer.shadowOffset = CGSize(width: 0.4, height: 2.0)

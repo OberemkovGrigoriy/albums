@@ -37,22 +37,19 @@ final class AlbumsViewController: UIViewController, ContentViewHolder {
         self.navigationController?.navigationBar.backgroundColor = UIColor.systemGray6
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.title = "Albums"
-        self.contentView.isUserInteractionEnabled = true
         self.contentView.addAction(action: self.dowloadAlbums)
     }
     
     private func dowloadAlbums() {
         self.contentView.state = .loading
-        self.albumService.request { result in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                switch result {
-                case .success(let albums):
-                    self.albums = albums
-                    self.contentView.tableView.reloadData()
-                    self.contentView.state = .downloaded
-                case .failure:
-                    self.contentView.state = .error
-                }
+        self.albumService.request { [weak self] result in
+            switch result {
+            case .success(let albums):
+                self?.albums = albums
+                self?.contentView.tableView.reloadData()
+                self?.contentView.state = .downloaded
+            case .failure:
+                self?.contentView.state = .error
             }
         }
     }
@@ -62,6 +59,8 @@ final class AlbumsViewController: UIViewController, ContentViewHolder {
 
 extension AlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photosController = PhotosViewController(id: self.albums[indexPath.row].id)
+        self.navigationController?.pushViewController(photosController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

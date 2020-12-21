@@ -98,38 +98,6 @@
             endingLineNumber = "46"
             landmarkName = "dowloadAlbums()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "94EF5452-2BCE-4846-AB28-01E464AE7E25 - 1176bef1840332ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Albums.AlbumsViewController.(dowloadAlbums in _39F3EDF5C79E798BDE79A3E700F36603)() -&gt; ()"
-                  moduleName = "Albums"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gregoryoberemkov/Albums/Albums/AlbumsModule/AlbumsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "94EF5452-2BCE-4846-AB28-01E464AE7E25 - 97571b24d0cf5a04"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Albums.Album&gt;, Swift.Error&gt;) -&gt; () in Albums.AlbumsViewController.(dowloadAlbums in _39F3EDF5C79E798BDE79A3E700F36603)() -&gt; ()"
-                  moduleName = "Albums"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gregoryoberemkov/Albums/Albums/AlbumsModule/AlbumsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "428">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
