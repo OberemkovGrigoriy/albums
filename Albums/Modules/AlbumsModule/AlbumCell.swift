@@ -22,6 +22,7 @@ final class AlbumCell: UITableViewCell {
         view.layer.shadowOpacity = 0.6
         return view
     }()
+
     private let albumLabel = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

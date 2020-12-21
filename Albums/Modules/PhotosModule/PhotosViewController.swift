@@ -9,14 +9,13 @@ import UIKit
 
 final class PhotosViewController: UIViewController, ContentViewHolder {
     typealias ContentView = PhotosView
-    
-    private var photos: [Photo] = []
+
     var selectedCell: UICollectionViewCell?
     var selectedCellImageViewSnapshot: UIView?
-
+    
+    private var photos: [Photo] = []
     private let photosService = PhotosService()
     private let id: Int
-   // var animator: Animator?
     
     init(id: Int) {
         self.id = id
@@ -67,7 +66,13 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCell = collectionView.cellForItem(at: indexPath)
         selectedCellImageViewSnapshot = selectedCell?.contentView.snapshotView(afterScreenUpdates: false)
-        let controller = PhotoDetailViewController(image: (selectedCell as! PhotoCell).photoView.image!)
+        guard
+            let photoCell = selectedCell as? PhotoCell,
+            let selectedImage = photoCell.photoView.image,
+            let title = photoCell.model?.title,
+            let url = photoCell.model?.url
+        else { return }
+        let controller = PhotoDetailViewController(image: selectedImage, title: title, imageURL: url)
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .fullScreen
         self.navigationController?.present(controller, animated: true)
